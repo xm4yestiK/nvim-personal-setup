@@ -1,13 +1,10 @@
--- ~/.config/nvim/lua/plugins/treesitter.lua
 return {
   "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate", 
+  build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup({
-      
-      -- List "parser" bahasa yg mau kita install
       ensure_installed = {
-        "lua", "vim", "vimdoc", 
+        "lua", "vim", "vimdoc",
         "bash",
         "dockerfile",
         "yaml",
@@ -20,10 +17,10 @@ return {
         "html",
         "groovy"
       },
-
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
     })
   end
 }
+

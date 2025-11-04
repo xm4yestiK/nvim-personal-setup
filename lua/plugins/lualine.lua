@@ -1,16 +1,10 @@
--- ~/.config/nvim/lua/plugins/lualine.lua
 return {
   'nvim-lualine/lualine.nvim',
-
-  -- GANTI "BOS"-nya balik ke 'catppuccin/nvim'
   dependencies = { 'catppuccin/nvim', 'nvim-tree/nvim-web-devicons' },
-
   config = function()
     require('lualine').setup({
       options = {
-        -- GANTI TEMA-nya balik ke 'catppuccin'
-        theme = 'catppuccin', 
-
+        theme = 'catppuccin',
         icons_enabled = true,
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
@@ -28,3 +22,4 @@ return {
     })
   end,
 }
+

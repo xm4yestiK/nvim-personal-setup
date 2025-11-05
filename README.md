@@ -16,7 +16,7 @@
    **Windows**
 
    ```powershell
-   git clone https://github.com/<username>/<repo-name>.git "C:\Users\ramvi\AppData\Local\nvim"
+   git clone https://github.com/<username>/<repo-name>.git "C:\Users\<USERNAME>\AppData\Local\nvim"
    ```
 
    **Linux/macOS**
@@ -34,5 +34,3 @@
 3. Plugins and LSP servers will be installed automatically via `lazy.nvim` or `mason.nvim`.
 
 ---
-
-Would you like me to make this version Markdown-styled with icons and better spacing (like a professional GitHub README)?

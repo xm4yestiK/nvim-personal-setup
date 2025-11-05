@@ -32,5 +32,3 @@
    ```
 
 3. Plugins and LSP servers will be installed automatically via `lazy.nvim` or `mason.nvim`.
-
----

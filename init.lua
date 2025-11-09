@@ -17,3 +17,4 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Buka File Explorer (Netrw)" })
 
 require("lazy").setup("plugins")
+

@@ -1,18 +1,3 @@
-local on_attach = function(client, bufnr)
-  local bufmap = function(keys, func)
-    vim.keymap.set('n', keys, func, { buffer = bufnr })
-  end
-  
-  bufmap('K', vim.lsp.buf.hover)
-  bufmap('gd', vim.lsp.buf.definition)
-  bufmap('gr', vim.lsp.buf.references)
-  bufmap('gi', vim.lsp.buf.implementation)
-  bufmap('[d', vim.diagnostic.goto_prev)
-  bufmap(']d', vim.diagnostic.goto_next)
-  bufmap('<leader>ca', vim.lsp.buf.code_action)
-  bufmap('<leader>rn', vim.lsp.buf.rename)
-end
-
 return {
   {
     "williamboman/mason.nvim",
@@ -49,20 +34,33 @@ return {
         "lua_ls", "groovyls", "jsonls", "taplo", "intelephense", "html",
       },
       handlers = {
-        function(server_name)
+        ['*'] = function(server_name)
+          local on_attach = function(client, bufnr)
+            local bufmap = function(keys, func)
+              vim.keymap.set('n', keys, func, { buffer = bufnr, silent = true, desc = server_name .. " Map" })
+            end
+            
+            bufmap('K', vim.lsp.buf.hover)
+            bufmap('gd', vim.lsp.buf.definition)
+            bufmap('gr', vim.lsp.buf.references)
+            bufmap('gi', vim.lsp.buf.implementation)
+            bufmap('[d', vim.diagnostic.goto_prev)
+            bufmap(']d', vim.diagnostic.goto_next)
+            bufmap('<leader>ca', vim.lsp.buf.code_action)
+            bufmap('<leader>rn', vim.lsp.buf.rename)
+          end
           require("lspconfig")[server_name].setup({
             on_attach = on_attach,
           })
         end,
+
         ["lua_ls"] = function()
           require("lspconfig").lua_ls.setup({
-            on_attach = on_attach,
-            settings = { Lua = { diagnostics = { globals = { "vim" } } } }
+            settings = { Lua = { diagnostics = { globals = { "vim" } } } },
           })
         end,
         ["html"] = function ()
           require("lspconfig").html.setup({
-            on_attach = on_attach,
             filetypes = { "html", "php" }
           })
         end
@@ -70,4 +68,3 @@ return {
     }
   },
 }
-

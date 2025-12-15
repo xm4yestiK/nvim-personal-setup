@@ -16,7 +16,7 @@
    **Windows**
 
    ```powershell
-   git clone https://github.com/<username>/<repo-name>.git "C:\Users\<USERNAME>\AppData\Local\nvim"
+   git clone https://github.com/xm4yestiK/nvim-personal-setup.git "C:\Users\<USERNAME>\AppData\Local\nvim"
    ```
 
    **Linux/macOS**

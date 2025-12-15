@@ -22,7 +22,7 @@
    **Linux/macOS**
 
    ```bash
-   git clone https://github.com/<username>/<repo-name>.git ~/.config/nvim/
+   git clone https://github.com/xm4yestiK/nvim-personal-setup.git ~/.config/nvim/
    ```
 
 2. Open Neovim:

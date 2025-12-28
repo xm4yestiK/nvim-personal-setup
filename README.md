@@ -34,5 +34,5 @@
 3. Plugins and LSP servers will be installed automatically via `lazy.nvim` or `mason.nvim`.
 
 *If you haven't installed Neovim: 
-Windows x64_86: https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.msi
-Debian: sudo apt install neovim
+1. Windows x64_86: https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.msi
+2. Debian: sudo apt install neovim
